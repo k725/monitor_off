@@ -13,7 +13,7 @@ int main(const int argc, char** argv)
 
 	std::this_thread::sleep_for(std::chrono::seconds(SLEEP_SEC));
 
-	const auto post_result = PostMessageW(HWND_BROADCAST, 0x0112, 0xF170, 2);
+	const auto post_result = PostMessageW(HWND_BROADCAST, WM_SYSCOMMAND, SC_MONITORPOWER, 2);
 	if (post_result == FALSE)
 	{
 		std::cout << "PostMessageW Failed" << std::endl;
